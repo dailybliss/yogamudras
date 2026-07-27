@@ -366,12 +366,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .books .sec-head h2{color:var(--cream)}
 .books .sec-head p{color:rgba(231,239,227,.75)}
 .books .eyebrow{color:var(--gold-light)}
-.book-row{display:grid;grid-template-columns:1fr;gap:24px;max-width:680px;margin:0 auto}
-.book{background:var(--cream);border-radius:var(--radius-lg);padding:30px;display:flex;gap:22px;align-items:center;position:relative}
-.book-cover{width:148px;height:210px;border-radius:8px;background:linear-gradient(160deg,var(--sage),var(--forest));flex-shrink:0;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--cream);font-family:"Fraunces",Georgia,serif;font-size:.85rem;padding:12px;box-shadow:0 22px 48px -18px rgba(0,0,0,.55);line-height:1.25}
-.book-cover-img{width:148px;height:210px;border-radius:8px;object-fit:cover;flex-shrink:0;box-shadow:0 22px 48px -18px rgba(0,0,0,.55);display:block}
-.book h3{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.28rem;color:var(--forest);line-height:1.15;margin-bottom:7px}
-.book .stars{color:var(--gold);font-size:.86rem;margin-bottom:9px;letter-spacing:2px}
+.book-row{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:860px;margin:0 auto}
+.book{background:var(--cream);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;position:relative}
+.book picture{display:block;width:100%;line-height:0}
+.book-cover-img{width:100%;height:auto;display:block;object-fit:cover}
+.book-body{padding:26px 28px 28px}
+.book-cover{width:100%;border-radius:0;background:linear-gradient(160deg,var(--sage),var(--forest));display:flex;align-items:center;justify-content:center;text-align:center;color:var(--cream);font-family:"Fraunces",Georgia,serif;font-size:.85rem;padding:60px 24px;box-shadow:none;line-height:1.25}
+.book h3{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.3rem;color:var(--forest);line-height:1.2;margin-bottom:8px}
+.book .stars{color:var(--gold);font-size:.86rem;margin-bottom:10px;letter-spacing:2px}
 .book p{font-size:.86rem;color:var(--sage);margin-bottom:14px}
 .book-btn{display:inline-block;background:var(--forest);color:var(--cream);padding:10px 20px;border-radius:100px;font-size:.81rem;font-weight:700;transition:background .25s}
 .book-btn:hover{background:var(--forest-soft)}
@@ -420,9 +422,9 @@ details summary::-webkit-details-marker{display:none}
   .quote-grid{grid-template-columns:1fr}
 }
 @media (max-width:900px){
+  .book-row{grid-template-columns:1fr;max-width:480px;margin:0 auto}
   .nav-links{display:none}
   .nav-toggle{display:flex}
-  .book-row{max-width:100%}
   .guide-grid{grid-template-columns:1fr}
   .asks{padding:32px 24px 34px}
   .asks-grid{grid-template-columns:1fr;gap:0}
@@ -444,7 +446,6 @@ details summary::-webkit-details-marker{display:none}
   .tl-node::after{display:none}
   .tl-node{padding-right:0}
   .foot-grid{grid-template-columns:1fr}
-  .book{gap:20px}
   .etym-plus{display:none}
   .foot-bottom{flex-direction:column;text-align:center}
   .group-more{text-align:left}
@@ -894,11 +895,11 @@ details summary::-webkit-details-marker{display:none}
       <article class="book">
         <picture>
           <source srcset="assets/book-beginners.webp" type="image/webp">
-          <img src="assets/book-beginners.jpg" width="148" height="210" loading="lazy" decoding="async"
+          <img src="assets/book-beginners.jpg" loading="lazy" decoding="async"
                class="book-cover-img"
                alt="Mudras for Beginners book cover — by Shiv Kumar, showing a woman practising Anjali Mudra in a garden">
         </picture>
-        <div>
+        <div class="book-body">
           <h3>Mudras for Beginners</h3>
           <div class="stars" aria-label="Rated 5 out of 5">★★★★★</div>
           <p>The essential collection of foundational yoga mudras — clearly illustrated, simply explained, and easy to start today. No prior experience needed.</p>
@@ -916,11 +917,11 @@ details summary::-webkit-details-marker{display:none}
       <article class="book">
         <picture>
           <source srcset="assets/book-mastery.webp" type="image/webp">
-          <img src="assets/book-mastery.jpg" width="148" height="210" loading="lazy" decoding="async"
+          <img src="assets/book-mastery.jpg" loading="lazy" decoding="async"
                class="book-cover-img"
                alt="Mudra Mastery: Beyond the Basics book cover — by Shiv Kumar, showing a woman by the sea">
         </picture>
-        <div>
+        <div class="book-body">
           <h3>Mudra Mastery: Beyond the Basics</h3>
           <div class="stars" aria-label="Rated 5 out of 5">★★★★★</div>
           <p>For those ready to go further — slightly advanced mudras for specific health goals and deeper states of wellbeing.</p>
