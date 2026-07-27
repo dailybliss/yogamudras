@@ -226,17 +226,22 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .reel-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px;flex-wrap:wrap}
 .reel-head h2{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:clamp(1.7rem,2.8vw,2.3rem);color:var(--forest);line-height:1.15;margin-top:8px}
 .reel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.reel-card{border-radius:var(--radius);overflow:hidden;background:var(--paper);border:1px solid var(--line);transition:transform .3s,box-shadow .3s}
-.reel-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.reel-thumb{position:relative;aspect-ratio:16/10;background:var(--moss);display:flex;align-items:center;justify-content:center}
-.reel-thumb>svg{width:56px;height:56px;stroke:var(--forest);opacity:.42;fill:none}
-.reel-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(27,58,43,.12);transition:background .25s}
-.reel-card:hover .reel-play{background:rgba(27,58,43,.24)}
-.reel-play i{width:50px;height:50px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px -6px rgba(0,0,0,.4)}
-.reel-play i::after{content:"";border-left:14px solid var(--forest);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
-.reel-meta{padding:18px 20px 20px}
-.reel-meta h3{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.1rem;color:var(--forest);line-height:1.25}
-.reel-meta p{font-size:.84rem;color:var(--sage);margin-top:4px}
+.reel-facade{position:relative;aspect-ratio:9/16;background:#0a1a10;border-radius:var(--radius);overflow:hidden;cursor:pointer;display:block;width:100%}
+.reel-facade img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s cubic-bezier(.2,.6,.3,1)}
+.reel-facade:hover img{transform:scale(1.04)}
+.reel-play-btn{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(10,26,16,.28);transition:background .25s}
+.reel-facade:hover .reel-play-btn{background:rgba(10,26,16,.44)}
+.reel-play-btn i{width:58px;height:58px;border-radius:50%;background:rgba(251,252,249,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px -6px rgba(0,0,0,.6)}
+.reel-play-btn i::after{content:"";border-left:18px solid var(--forest);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+.reel-caption{position:absolute;bottom:0;left:0;right:0;padding:40px 16px 16px;background:linear-gradient(to top,rgba(10,26,16,.9) 0%,rgba(10,26,16,0) 100%)}
+.reel-caption h3{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.02rem;color:var(--cream);line-height:1.2;margin-bottom:3px}
+.reel-caption p{font-size:.76rem;color:rgba(231,239,227,.75)}
+.reel-iframe-wrap{display:none;position:absolute;inset:0}
+.reel-iframe-wrap iframe{width:100%;height:100%;border:none}
+.reel-facade.playing .reel-play-btn{display:none}
+.reel-facade.playing .reel-iframe-wrap{display:block}
+.reel-facade.playing img{display:none}
+
 
 /* ═══════════ ETYMOLOGY ═══════════ */
 .etym{background:var(--forest);color:var(--moss);text-align:center}
@@ -498,28 +503,41 @@ details summary::-webkit-details-marker{display:none}
       <p>Short, silent clips you can follow along with — no sound, no setup.</p>
     </div>
     <div class="reel-grid">
-      <a href="/gyan-mudra/" class="reel-card">
-        <div class="reel-thumb">
-          <svg viewBox="0 0 24 24" stroke-width="1.3" aria-hidden="true"><path d="M8 20V9a2 2 0 114 0M12 20V7a2 2 0 114 0M16 20V9a2 2 0 114 0v6a5 5 0 01-5 5H10a4 4 0 01-4-4v-6a2 2 0 114 0"/></svg>
-          <span class="reel-play" aria-hidden="true"><i></i></span>
+
+      <div class="reel-facade" data-videoid="tlf5GxZExNc" role="button" tabindex="0"
+           aria-label="Play Gyan Mudra on YouTube">
+        <img src="https://i.ytimg.com/vi/tlf5GxZExNc/hqdefault.jpg" alt="Gyan Mudra — The Knowledge Seal · 0:16" loading="lazy" decoding="async">
+        <div class="reel-play-btn" aria-hidden="true"><i></i></div>
+        <div class="reel-caption">
+          <h3>Gyan Mudra</h3>
+          <p>The Knowledge Seal · 0:16</p>
         </div>
-        <div class="reel-meta"><h3>Gyan Mudra</h3><p>Focus &amp; clarity · 0:15</p></div>
-      </a>
-      <a href="/prana-mudra/" class="reel-card">
-        <div class="reel-thumb">
-          <svg viewBox="0 0 24 24" stroke-width="1.3" aria-hidden="true"><path d="M8 20V9a2 2 0 114 0M12 20V7a2 2 0 114 0M16 20V9a2 2 0 114 0v6a5 5 0 01-5 5H10a4 4 0 01-4-4v-6a2 2 0 114 0"/></svg>
-          <span class="reel-play" aria-hidden="true"><i></i></span>
+        <div class="reel-iframe-wrap"></div>
+      </div>
+
+      <div class="reel-facade" data-videoid="XEaCK3tIDKI" role="button" tabindex="0"
+           aria-label="Play Prana Mudra on YouTube">
+        <img src="https://i.ytimg.com/vi/XEaCK3tIDKI/hqdefault.jpg" alt="Prana Mudra — The Life Force Seal · 0:14" loading="lazy" decoding="async">
+        <div class="reel-play-btn" aria-hidden="true"><i></i></div>
+        <div class="reel-caption">
+          <h3>Prana Mudra</h3>
+          <p>The Life Force Seal · 0:14</p>
         </div>
-        <div class="reel-meta"><h3>Prana Mudra</h3><p>Energy &amp; vitality · 0:14</p></div>
-      </a>
-      <a href="/vayu-mudra/" class="reel-card">
-        <div class="reel-thumb">
-          <svg viewBox="0 0 24 24" stroke-width="1.3" aria-hidden="true"><path d="M8 20V9a2 2 0 114 0M12 20V7a2 2 0 114 0M16 20V9a2 2 0 114 0v6a5 5 0 01-5 5H10a4 4 0 01-4-4v-6a2 2 0 114 0"/></svg>
-          <span class="reel-play" aria-hidden="true"><i></i></span>
+        <div class="reel-iframe-wrap"></div>
+      </div>
+
+      <div class="reel-facade" data-videoid="gwC-oBs01ZU" role="button" tabindex="0"
+           aria-label="Play Vayu Mudra on YouTube">
+        <img src="https://i.ytimg.com/vi/gwC-oBs01ZU/hqdefault.jpg" alt="Vayu Mudra — The Air Seal · 0:14" loading="lazy" decoding="async">
+        <div class="reel-play-btn" aria-hidden="true"><i></i></div>
+        <div class="reel-caption">
+          <h3>Vayu Mudra</h3>
+          <p>The Air Seal · 0:14</p>
         </div>
-        <div class="reel-meta"><h3>Vayu Mudra</h3><p>Gas &amp; joint relief · 0:15</p></div>
-      </a>
-    </div>
+        <div class="reel-iframe-wrap"></div>
+      </div>
+
+        </div>
     <div class="center">
       <a href="/gallery/" class="sec-link">See all mudra videos in the gallery</a>
     </div>
@@ -1025,6 +1043,34 @@ details summary::-webkit-details-marker{display:none}
 
 <script>
 (function () {
+  function initFacades () {
+    document.querySelectorAll('.reel-facade').forEach(function (el) {
+      function activate () {
+        var id   = el.dataset.videoid;
+        var wrap = el.querySelector('.reel-iframe-wrap');
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + id +
+                     '?autoplay=1&rel=0&modestbranding=1';
+        iframe.allow = 'autoplay; encrypted-media';
+        iframe.allowFullscreen = true;
+        wrap.appendChild(iframe);
+        el.classList.add('playing');
+      }
+      el.addEventListener('click', activate);
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFacades);
+  } else {
+    initFacades();
+  }
+})();
+</script>
+<script>
+(function () {
   function start() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (!('IntersectionObserver' in window)) return;
@@ -1064,4 +1110,4 @@ details summary::-webkit-details-marker{display:none}
 })();
 </script>
 </body>
-</html>
+          </html>
