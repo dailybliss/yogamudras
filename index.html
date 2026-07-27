@@ -413,8 +413,7 @@ details summary::-webkit-details-marker{display:none}
   .split{grid-template-columns:1fr;gap:44px}
   .people-grid{grid-template-columns:repeat(2,1fr)}
   .card-grid{grid-template-columns:repeat(2,1fr)}
-  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px}
-  .shot-centre{grid-column:1/3;grid-row:2;height:220px}
+  .mosaic{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,220px)}
   .reel-grid{grid-template-columns:repeat(3,1fr);gap:16px}
   .tl{grid-template-columns:repeat(2,1fr);gap:34px 0;padding-left:0}
   .tl-node:nth-child(2)::after{background:linear-gradient(to right,var(--line-strong),rgba(27,58,43,0))}
@@ -439,8 +438,8 @@ details summary::-webkit-details-marker{display:none}
   .hero{padding:64px 0 60px}
   .people-grid{grid-template-columns:1fr}
   .card-grid{grid-template-columns:1fr}
-  .mosaic{grid-template-columns:1fr;gap:13px;grid-template-rows:none}
-  .shot,.shot-centre{aspect-ratio:16/10;grid-column:span 1;grid-row:auto}
+  .mosaic{grid-template-columns:1fr;grid-template-rows:none;gap:13px}
+  .shot{aspect-ratio:16/10}
   .tl{grid-template-columns:1fr;gap:30px 0}
   .tl-node::after{display:none}
   .tl-node{padding-right:0}
@@ -560,7 +559,7 @@ details summary::-webkit-details-marker{display:none}
 
     <div class="mosaic">
 
-      <!-- Col 1 row 1 — garden group -->
+      <!-- Row 1, Col 1 — garden group -->
       <figure class="shot">
         <picture>
           <source srcset="assets/practice-garden.webp" type="image/webp">
@@ -570,17 +569,17 @@ details summary::-webkit-details-marker{display:none}
         <figcaption>A garden circle · Anjali Mudra</figcaption>
       </figure>
 
-      <!-- Col 2 rows 1+2 — beach woman, centred hero -->
-      <figure class="shot shot-centre">
+      <!-- Row 1, Col 2 — beach woman (centre top) -->
+      <figure class="shot">
         <picture>
           <source srcset="assets/practice-beach.webp" type="image/webp">
-          <img src="assets/practice-beach.jpg" width="820" height="916" loading="lazy" decoding="async"
-               alt="A woman seated cross-legged on a woven mat at the shoreline at sunrise, both hands resting on her knees in Gyan Mudra, eyes softly closed">
+          <img src="assets/practice-beach.jpg" width="820" height="458" loading="lazy" decoding="async"
+               alt="A woman seated cross-legged on a woven mat at the shoreline at sunrise, both hands in Gyan Mudra, eyes softly closed">
         </picture>
         <figcaption>At the shoreline · Gyan Mudra</figcaption>
       </figure>
 
-      <!-- Col 3 row 1 — river woman -->
+      <!-- Row 1, Col 3 — river woman -->
       <figure class="shot">
         <picture>
           <source srcset="assets/practice-river.webp" type="image/webp">
@@ -590,7 +589,7 @@ details summary::-webkit-details-marker{display:none}
         <figcaption>By the river · Anjali Mudra</figcaption>
       </figure>
 
-      <!-- Col 1 row 2 — city park man -->
+      <!-- Row 2, Col 1 — city park man -->
       <figure class="shot">
         <picture>
           <source srcset="assets/practice-park.webp" type="image/webp">
@@ -600,7 +599,17 @@ details summary::-webkit-details-marker{display:none}
         <figcaption>A city park, mid-morning</figcaption>
       </figure>
 
-      <!-- Col 3 row 2 — two generations -->
+      <!-- Row 2, Col 2 — elder man in forest (centre bottom) -->
+      <figure class="shot">
+        <picture>
+          <source srcset="assets/practice-elder.webp" type="image/webp">
+          <img src="assets/practice-elder.jpg" width="820" height="458" loading="lazy" decoding="async"
+               alt="An older Asian man standing in a misty forest with eyes closed, holding Anjali Mudra serenely at his chest">
+        </picture>
+        <figcaption>A forest morning · Anjali Mudra</figcaption>
+      </figure>
+
+      <!-- Row 2, Col 3 — two generations -->
       <figure class="shot">
         <picture>
           <source srcset="assets/practice-generations.webp" type="image/webp">
