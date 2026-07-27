@@ -366,10 +366,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .books .sec-head h2{color:var(--cream)}
 .books .sec-head p{color:rgba(231,239,227,.75)}
 .books .eyebrow{color:var(--gold-light)}
-.book-row{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:920px;margin:0 auto}
+.book-row{display:grid;grid-template-columns:1fr;gap:24px;max-width:680px;margin:0 auto}
 .book{background:var(--cream);border-radius:var(--radius-lg);padding:30px;display:flex;gap:22px;align-items:center;position:relative}
-.book-cover{width:112px;height:162px;border-radius:8px;background:linear-gradient(160deg,var(--sage),var(--forest));flex-shrink:0;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--cream);font-family:"Fraunces",Georgia,serif;font-size:.85rem;padding:12px;box-shadow:0 18px 40px -18px rgba(0,0,0,.5);line-height:1.25}
-.book-cover-img{width:112px;height:162px;border-radius:8px;object-fit:cover;flex-shrink:0;box-shadow:0 18px 40px -18px rgba(0,0,0,.5);display:block}
+.book-cover{width:148px;height:210px;border-radius:8px;background:linear-gradient(160deg,var(--sage),var(--forest));flex-shrink:0;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--cream);font-family:"Fraunces",Georgia,serif;font-size:.85rem;padding:12px;box-shadow:0 22px 48px -18px rgba(0,0,0,.55);line-height:1.25}
+.book-cover-img{width:148px;height:210px;border-radius:8px;object-fit:cover;flex-shrink:0;box-shadow:0 22px 48px -18px rgba(0,0,0,.55);display:block}
 .book h3{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.28rem;color:var(--forest);line-height:1.15;margin-bottom:7px}
 .book .stars{color:var(--gold);font-size:.86rem;margin-bottom:9px;letter-spacing:2px}
 .book p{font-size:.86rem;color:var(--sage);margin-bottom:14px}
@@ -422,7 +422,7 @@ details summary::-webkit-details-marker{display:none}
 @media (max-width:900px){
   .nav-links{display:none}
   .nav-toggle{display:flex}
-  .book-row{grid-template-columns:1fr;gap:34px}
+  .book-row{max-width:100%}
   .guide-grid{grid-template-columns:1fr}
   .asks{padding:32px 24px 34px}
   .asks-grid{grid-template-columns:1fr;gap:0}
@@ -444,7 +444,7 @@ details summary::-webkit-details-marker{display:none}
   .tl-node::after{display:none}
   .tl-node{padding-right:0}
   .foot-grid{grid-template-columns:1fr}
-  .book{flex-direction:column;text-align:center;gap:18px}
+  .book{gap:20px}
   .etym-plus{display:none}
   .foot-bottom{flex-direction:column;text-align:center}
   .group-more{text-align:left}
@@ -894,7 +894,7 @@ details summary::-webkit-details-marker{display:none}
       <article class="book">
         <picture>
           <source srcset="assets/book-beginners.webp" type="image/webp">
-          <img src="assets/book-beginners.jpg" width="112" height="162" loading="lazy" decoding="async"
+          <img src="assets/book-beginners.jpg" width="148" height="210" loading="lazy" decoding="async"
                class="book-cover-img"
                alt="Mudras for Beginners book cover — by Shiv Kumar, showing a woman practising Anjali Mudra in a garden">
         </picture>
@@ -916,7 +916,7 @@ details summary::-webkit-details-marker{display:none}
       <article class="book">
         <picture>
           <source srcset="assets/book-mastery.webp" type="image/webp">
-          <img src="assets/book-mastery.jpg" width="112" height="162" loading="lazy" decoding="async"
+          <img src="assets/book-mastery.jpg" width="148" height="210" loading="lazy" decoding="async"
                class="book-cover-img"
                alt="Mudra Mastery: Beyond the Basics book cover — by Shiv Kumar, showing a woman by the sea">
         </picture>
