@@ -227,13 +227,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .reel-head h2{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:clamp(1.7rem,2.8vw,2.3rem);color:var(--forest);line-height:1.15;margin-top:8px}
 .reel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .reel-facade{position:relative;aspect-ratio:9/16;background:#0a1a10;border-radius:var(--radius);overflow:hidden;cursor:pointer;display:block;width:100%}
-.reel-facade img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s cubic-bezier(.2,.6,.3,1)}
+.reel-facade img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(1.16) saturate(1.08) contrast(1.05);transition:transform .4s cubic-bezier(.2,.6,.3,1)}
 .reel-facade:hover img{transform:scale(1.04)}
-.reel-play-btn{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(10,26,16,.28);transition:background .25s}
-.reel-facade:hover .reel-play-btn{background:rgba(10,26,16,.44)}
+.reel-play-btn{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(10,26,16,.1);transition:background .25s}
+.reel-facade:hover .reel-play-btn{background:rgba(10,26,16,.22)}
 .reel-play-btn i{width:58px;height:58px;border-radius:50%;background:rgba(251,252,249,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px -6px rgba(0,0,0,.6)}
 .reel-play-btn i::after{content:"";border-left:18px solid var(--forest);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
-.reel-caption{position:absolute;bottom:0;left:0;right:0;padding:40px 16px 16px;background:linear-gradient(to top,rgba(10,26,16,.9) 0%,rgba(10,26,16,0) 100%)}
+.reel-caption{position:absolute;bottom:0;left:0;right:0;padding:40px 16px 16px;background:linear-gradient(to top,rgba(10,26,16,.7) 0%,rgba(10,26,16,0) 100%)}
 .reel-caption h3{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.02rem;color:var(--cream);line-height:1.2;margin-bottom:3px}
 .reel-caption p{font-size:.76rem;color:rgba(231,239,227,.75)}
 .reel-iframe-wrap{display:none;position:absolute;inset:0}
