@@ -1188,11 +1188,77 @@ details summary::-webkit-details-marker{display:none}
     return;
   }
 
-  // 2 — IP geolocation fallback
-  fetch('https://ipapi.co/json/')
-    .then(function (r) { return r.json(); })
-    .then(function (d) { applyLinks(d.country_code || 'US'); })
-    .catch(function () { applyLinks('US'); });
+  // 2 — Timezone-based country guess (instant, no network, covers India and most markets)
+  var tzCountry = {
+    'Asia/Calcutta':         'IN', 'Asia/Kolkata':          'IN',
+    'Asia/Tokyo':            'JP', 'Asia/Singapore':        'SG',
+    'Asia/Dubai':            'AE', 'Asia/Riyadh':           'SA',
+    'America/New_York':      'US', 'America/Chicago':       'US',
+    'America/Los_Angeles':   'US', 'America/Denver':        'US',
+    'America/Toronto':       'CA', 'America/Vancouver':     'CA',
+    'America/Sao_Paulo':     'BR', 'America/Mexico_City':   'MX',
+    'Europe/London':         'GB', 'Europe/Dublin':         'IE',
+    'Europe/Berlin':         'DE', 'Europe/Vienna':         'AT',
+    'Europe/Zurich':         'CH', 'Europe/Paris':          'FR',
+    'Europe/Brussels':       'BE', 'Europe/Madrid':         'ES',
+    'Europe/Rome':           'IT', 'Europe/Amsterdam':      'NL',
+    'Europe/Stockholm':      'SE', 'Europe/Warsaw':         'PL',
+    'Australia/Sydney':      'AU', 'Australia/Melbourne':   'AU',
+    'Australia/Brisbane':    'AU', 'Pacific/Auckland':      'NZ',
+  };
+
+  // UTC offset → country fallback (covers browsers that report offsets instead of tz names)
+  var offsetCountry = {
+    '330':   'IN',   // UTC+5:30 — India (unique offset, safe to use)
+    '-300':  'US',   // UTC-5 EST
+    '-360':  'US',   // UTC-6 CST
+    '-420':  'US',   // UTC-7 MST
+    '-480':  'US',   // UTC-8 PST
+    '-240':  'CA',   // UTC-4 Canada Eastern
+    '-300':  'CA',   // ambiguous — skip, let API handle
+    '0':     'GB',   // UTC — UK (winter)
+    '60':    'FR',   // UTC+1 — covers DE/FR/ES/IT/NL (ambiguous, let API refine)
+    '540':   'JP',   // UTC+9 — Japan
+    '-180':  'BR',   // UTC-3 — Brazil
+    '-360':  'MX',   // UTC-6 — Mexico
+    '600':   'AU',   // UTC+10 — Australia Eastern
+    '480':   'SG',   // UTC+8 — Singapore
+    '345':   'NP',   // Nepal — close to India offset
+  };
+
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (tz && tzCountry[tz]) {
+      applyLinks(tzCountry[tz]);
+      return;
+    }
+    // Offset fallback — getTimezoneOffset() returns minutes WEST (negative for east)
+    var offset = String(-(new Date().getTimezoneOffset()));
+    if (offsetCountry[offset]) {
+      applyLinks(offsetCountry[offset]);
+      return;
+    }
+  } catch(e) {}
+
+  // 3 — IP geolocation API chain (three fallbacks)
+  var apis = [
+    { url: 'https://ipapi.co/json/',                     key: 'country_code' },
+    { url: 'https://ip-api.com/json/?fields=countryCode', key: 'countryCode'  },
+    { url: 'https://ipwho.is/',                           key: 'country_code' },
+  ];
+
+  function tryApi(index) {
+    if (index >= apis.length) { return; } // all failed — stay on default US
+    fetch(apis[index].url)
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        var code = d[apis[index].key];
+        if (code) { applyLinks(code); }
+        else { tryApi(index + 1); }
+      })
+      .catch(function() { tryApi(index + 1); });
+  }
+  tryApi(0);
 
 })();
 </script>
