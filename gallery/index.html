@@ -70,9 +70,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .pg-header h1{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:clamp(1.9rem,3.6vw,2.9rem);color:var(--cream);line-height:1.15;max-width:760px;margin:0 auto}
 .pg-header p{color:rgba(231,239,227,.78);font-size:1rem;margin:14px auto 0;max-width:520px}
 
-/* GRID */
+/* GRID — each video is a single card containing facade + info */
 .gallery-body{padding:56px 0 72px}
-.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 28px;align-items:start}
+.video-card{display:flex;flex-direction:column}
+
 .reel-facade{position:relative;aspect-ratio:9/16;background:#0a1a10;border-radius:var(--radius);overflow:hidden;cursor:pointer;display:block;width:100%}
 .reel-facade img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s cubic-bezier(.2,.6,.3,1)}
 .reel-facade:hover img{transform:scale(1.04)}
@@ -93,9 +95,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .reel-facade.playing .reel-iframe-wrap{display:block}
 .reel-facade.playing img{display:none}
 
-.reel-info{padding:14px 4px 0}
-.reel-info-text{font-size:.86rem;color:var(--sage);line-height:1.55;margin-bottom:8px}
-.reel-info-link{font-size:.82rem;font-weight:700;color:var(--forest);border-bottom:1.5px solid var(--gold);padding-bottom:2px}
+.reel-info{padding:14px 2px 0;display:flex;flex-direction:column;flex:1}
+.reel-info-text{font-size:.86rem;color:var(--sage);line-height:1.55;margin-bottom:10px}
+.reel-info-link{font-size:.82rem;font-weight:700;color:var(--forest);border-bottom:1.5px solid var(--gold);padding-bottom:2px;align-self:flex-end;margin-top:auto}
 .reel-info-link:hover{color:var(--gold)}
 
 /* MORE COMING NOTE */
@@ -156,105 +158,109 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <section class="gallery-body">
   <div class="wrap">
     <div class="video-grid">
-
-      <div class="reel-facade" data-videoid="tlf5GxZExNc" role="button" tabindex="0"
-           aria-label="Play Gyan Mudra — Meditation & Focus on YouTube">
-        <img src="https://i.ytimg.com/vi/tlf5GxZExNc/maxresdefault.jpg"
-             data-fallback="https://i.ytimg.com/vi/tlf5GxZExNc/hqdefault.jpg"
-             alt="Gyan Mudra — Meditation & Focus — yoga mudra video" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src=this.dataset.fallback;">
-        <div class="reel-play-btn" aria-hidden="true"><i></i></div>
-        <span class="reel-tag tag-meditation">Meditation & Focus</span>
-        <div class="reel-caption">
-          <h3>Gyan Mudra</h3>
-          <p>0:16</p>
+      <div class="video-card">
+        <div class="reel-facade" data-videoid="tlf5GxZExNc" role="button" tabindex="0"
+             aria-label="Play Gyan Mudra — Meditation & Focus on YouTube">
+          <img src="https://i.ytimg.com/vi/tlf5GxZExNc/maxresdefault.jpg"
+               data-fallback="https://i.ytimg.com/vi/tlf5GxZExNc/hqdefault.jpg"
+               alt="Gyan Mudra — Meditation & Focus — yoga mudra video" loading="lazy" decoding="async"
+               onerror="this.onerror=null;this.src=this.dataset.fallback;">
+          <div class="reel-play-btn" aria-hidden="true"><i></i></div>
+          <span class="reel-tag tag-meditation">Meditation & Focus</span>
+          <div class="reel-caption">
+            <h3>Gyan Mudra</h3>
+            <p>0:16</p>
+          </div>
+          <div class="reel-iframe-wrap"></div>
         </div>
-        <div class="reel-iframe-wrap"></div>
-      </div>
-
-      <div class="reel-info">
-        <p class="reel-info-text">The classic thumb-to-index-finger seal for calm, clear focus during meditation.</p>
-        <a href="/gyan-mudra/" class="reel-info-link">Full Gyan Mudra guide →</a>
-      </div>
-
-      <div class="reel-facade" data-videoid="5nJDhmnDWGE" role="button" tabindex="0"
-           aria-label="Play Anjali Mudra — Meditation & Grounding on YouTube">
-        <img src="https://i.ytimg.com/vi/5nJDhmnDWGE/maxresdefault.jpg"
-             data-fallback="https://i.ytimg.com/vi/5nJDhmnDWGE/hqdefault.jpg"
-             alt="Anjali Mudra — Meditation & Grounding — yoga mudra video" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src=this.dataset.fallback;">
-        <div class="reel-play-btn" aria-hidden="true"><i></i></div>
-        <span class="reel-tag tag-meditation">Meditation & Grounding</span>
-        <div class="reel-caption">
-          <h3>Anjali Mudra</h3>
-          <p>0:12</p>
+        <div class="reel-info">
+          <p class="reel-info-text">The classic thumb-to-index-finger seal for calm, clear focus during meditation.</p>
+          <a href="/gyan-mudra/" class="reel-info-link">Full Gyan Mudra guide →</a>
         </div>
-        <div class="reel-iframe-wrap"></div>
       </div>
 
-      <div class="reel-info">
-        <p class="reel-info-text">Palms pressed together at the heart — the simplest mudra to learn, and one of the most grounding.</p>
-        <a href="/anjali-mudra/" class="reel-info-link">Full Anjali Mudra guide →</a>
-      </div>
-
-      <div class="reel-facade" data-videoid="waBQoCNK6Ho" role="button" tabindex="0"
-           aria-label="Play Dhyan Mudra — Meditation & Focus on YouTube">
-        <img src="https://i.ytimg.com/vi/waBQoCNK6Ho/maxresdefault.jpg"
-             data-fallback="https://i.ytimg.com/vi/waBQoCNK6Ho/hqdefault.jpg"
-             alt="Dhyan Mudra — Meditation & Focus — yoga mudra video" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src=this.dataset.fallback;">
-        <div class="reel-play-btn" aria-hidden="true"><i></i></div>
-        <span class="reel-tag tag-meditation">Meditation & Focus</span>
-        <div class="reel-caption">
-          <h3>Dhyan Mudra</h3>
-          <p>0:13</p>
+      <div class="video-card">
+        <div class="reel-facade" data-videoid="5nJDhmnDWGE" role="button" tabindex="0"
+             aria-label="Play Anjali Mudra — Meditation & Grounding on YouTube">
+          <img src="https://i.ytimg.com/vi/5nJDhmnDWGE/maxresdefault.jpg"
+               data-fallback="https://i.ytimg.com/vi/5nJDhmnDWGE/hqdefault.jpg"
+               alt="Anjali Mudra — Meditation & Grounding — yoga mudra video" loading="lazy" decoding="async"
+               onerror="this.onerror=null;this.src=this.dataset.fallback;">
+          <div class="reel-play-btn" aria-hidden="true"><i></i></div>
+          <span class="reel-tag tag-meditation">Meditation & Grounding</span>
+          <div class="reel-caption">
+            <h3>Anjali Mudra</h3>
+            <p>0:12</p>
+          </div>
+          <div class="reel-iframe-wrap"></div>
         </div>
-        <div class="reel-iframe-wrap"></div>
-      </div>
-
-      <div class="reel-info">
-        <p class="reel-info-text">The seated meditation seal — hands resting in the lap, thumbs lightly touching.</p>
-        <a href="/dhyan-mudra/" class="reel-info-link">Full Dhyan Mudra guide →</a>
-      </div>
-
-      <div class="reel-facade" data-videoid="XEaCK3tIDKI" role="button" tabindex="0"
-           aria-label="Play Prana Mudra — Energy & Vitality on YouTube">
-        <img src="https://i.ytimg.com/vi/XEaCK3tIDKI/maxresdefault.jpg"
-             data-fallback="https://i.ytimg.com/vi/XEaCK3tIDKI/hqdefault.jpg"
-             alt="Prana Mudra — Energy & Vitality — yoga mudra video" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src=this.dataset.fallback;">
-        <div class="reel-play-btn" aria-hidden="true"><i></i></div>
-        <span class="reel-tag tag-energy">Energy & Vitality</span>
-        <div class="reel-caption">
-          <h3>Prana Mudra</h3>
-          <p>0:14</p>
+        <div class="reel-info">
+          <p class="reel-info-text">Palms pressed together at the heart — the simplest mudra to learn, and one of the most grounding.</p>
+          <a href="/anjali-mudra/" class="reel-info-link">Full Anjali Mudra guide →</a>
         </div>
-        <div class="reel-iframe-wrap"></div>
       </div>
 
-      <div class="reel-info">
-        <p class="reel-info-text">Touch the ring and little fingers to the thumb to support vitality, immunity and reduce fatigue.</p>
-        <a href="/prana-mudra/" class="reel-info-link">Full Prana Mudra guide →</a>
-      </div>
-
-      <div class="reel-facade" data-videoid="gwC-oBs01ZU" role="button" tabindex="0"
-           aria-label="Play Vayu Mudra — Relief from Gas & Joint Pain on YouTube">
-        <img src="https://i.ytimg.com/vi/gwC-oBs01ZU/maxresdefault.jpg"
-             data-fallback="https://i.ytimg.com/vi/gwC-oBs01ZU/hqdefault.jpg"
-             alt="Vayu Mudra — Relief from Gas & Joint Pain — yoga mudra video" loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.src=this.dataset.fallback;">
-        <div class="reel-play-btn" aria-hidden="true"><i></i></div>
-        <span class="reel-tag tag-relief">Relief from Gas & Joint Pain</span>
-        <div class="reel-caption">
-          <h3>Vayu Mudra</h3>
-          <p>0:14</p>
+      <div class="video-card">
+        <div class="reel-facade" data-videoid="waBQoCNK6Ho" role="button" tabindex="0"
+             aria-label="Play Dhyan Mudra — Meditation & Focus on YouTube">
+          <img src="https://i.ytimg.com/vi/waBQoCNK6Ho/maxresdefault.jpg"
+               data-fallback="https://i.ytimg.com/vi/waBQoCNK6Ho/hqdefault.jpg"
+               alt="Dhyan Mudra — Meditation & Focus — yoga mudra video" loading="lazy" decoding="async"
+               onerror="this.onerror=null;this.src=this.dataset.fallback;">
+          <div class="reel-play-btn" aria-hidden="true"><i></i></div>
+          <span class="reel-tag tag-meditation">Meditation & Focus</span>
+          <div class="reel-caption">
+            <h3>Dhyan Mudra</h3>
+            <p>0:13</p>
+          </div>
+          <div class="reel-iframe-wrap"></div>
         </div>
-        <div class="reel-iframe-wrap"></div>
+        <div class="reel-info">
+          <p class="reel-info-text">The seated meditation seal — hands resting in the lap, thumbs lightly touching.</p>
+          <a href="/dhyan-mudra/" class="reel-info-link">Full Dhyan Mudra guide →</a>
+        </div>
       </div>
 
-      <div class="reel-info">
-        <p class="reel-info-text">Fold the index finger under the thumb for fast relief from bloating, gas and joint discomfort.</p>
-        <a href="/vayu-mudra/" class="reel-info-link">Full Vayu Mudra guide →</a>
+      <div class="video-card">
+        <div class="reel-facade" data-videoid="XEaCK3tIDKI" role="button" tabindex="0"
+             aria-label="Play Prana Mudra — Energy & Vitality on YouTube">
+          <img src="https://i.ytimg.com/vi/XEaCK3tIDKI/maxresdefault.jpg"
+               data-fallback="https://i.ytimg.com/vi/XEaCK3tIDKI/hqdefault.jpg"
+               alt="Prana Mudra — Energy & Vitality — yoga mudra video" loading="lazy" decoding="async"
+               onerror="this.onerror=null;this.src=this.dataset.fallback;">
+          <div class="reel-play-btn" aria-hidden="true"><i></i></div>
+          <span class="reel-tag tag-energy">Energy & Vitality</span>
+          <div class="reel-caption">
+            <h3>Prana Mudra</h3>
+            <p>0:14</p>
+          </div>
+          <div class="reel-iframe-wrap"></div>
+        </div>
+        <div class="reel-info">
+          <p class="reel-info-text">Touch the ring and little fingers to the thumb to support vitality, immunity and reduce fatigue.</p>
+          <a href="/prana-mudra/" class="reel-info-link">Full Prana Mudra guide →</a>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="reel-facade" data-videoid="gwC-oBs01ZU" role="button" tabindex="0"
+             aria-label="Play Vayu Mudra — Relief from Gas & Joint Pain on YouTube">
+          <img src="https://i.ytimg.com/vi/gwC-oBs01ZU/maxresdefault.jpg"
+               data-fallback="https://i.ytimg.com/vi/gwC-oBs01ZU/hqdefault.jpg"
+               alt="Vayu Mudra — Relief from Gas & Joint Pain — yoga mudra video" loading="lazy" decoding="async"
+               onerror="this.onerror=null;this.src=this.dataset.fallback;">
+          <div class="reel-play-btn" aria-hidden="true"><i></i></div>
+          <span class="reel-tag tag-relief">Relief from Gas & Joint Pain</span>
+          <div class="reel-caption">
+            <h3>Vayu Mudra</h3>
+            <p>0:14</p>
+          </div>
+          <div class="reel-iframe-wrap"></div>
+        </div>
+        <div class="reel-info">
+          <p class="reel-info-text">Fold the index finger under the thumb for fast relief from bloating, gas and joint discomfort.</p>
+          <a href="/vayu-mudra/" class="reel-info-link">Full Vayu Mudra guide →</a>
+        </div>
       </div>
 
     </div>
