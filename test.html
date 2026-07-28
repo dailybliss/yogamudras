@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thumbnail brightness comparison</title>
+<style>
+:root{
+  --forest:#1B3A2B; --cream:#FBFCF9; --gold:#B08D57; --gold-light:#D9BE8F;
+  --sage:#5E7C64; --paper:#F4F7F0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,sans-serif;background:var(--paper);padding:40px 24px;color:var(--forest)}
+h1{font-family:Georgia,serif;font-size:1.6rem;margin-bottom:8px;text-align:center}
+p.sub{text-align:center;color:var(--sage);margin-bottom:36px;font-size:.9rem}
+.row{display:flex;gap:22px;max-width:1200px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.col{flex:0 0 200px}
+.label{text-align:center;font-size:.8rem;font-weight:700;margin-bottom:10px;color:var(--forest)}
+.card{position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#0a1a10}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.play i{width:52px;height:52px;border-radius:50%;background:rgba(251,252,249,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px -6px rgba(0,0,0,.6)}
+.play i::after{content:"";border-left:16px solid var(--forest);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.cap{position:absolute;bottom:0;left:0;right:0;padding:34px 14px 14px;color:var(--cream)}
+.cap h3{font-family:Georgia,serif;font-size:.95rem;margin-bottom:2px}
+.cap p{font-size:.7rem;opacity:.8}
+
+/* A — current (baseline) */
+.a .play{background:rgba(10,26,16,.28)}
+.a .cap{background:linear-gradient(to top,rgba(10,26,16,.9) 0%,rgba(10,26,16,0) 100%)}
+
+/* B — lighter scrim + gradient */
+.b .play{background:rgba(10,26,16,.12)}
+.b .cap{background:linear-gradient(to top,rgba(10,26,16,.72) 0%,rgba(10,26,16,0) 100%)}
+
+/* C — lighter scrim/gradient + brightness boost on image */
+.c img{filter:brightness(1.18) saturate(1.08)}
+.c .play{background:rgba(10,26,16,.10)}
+.c .cap{background:linear-gradient(to top,rgba(10,26,16,.68) 0%,rgba(10,26,16,0) 100%)}
+
+/* D — no scrim at all, gradient only, brightness boost */
+.d img{filter:brightness(1.15)}
+.d .play{background:rgba(10,26,16,0)}
+.d .cap{background:linear-gradient(to top,rgba(10,26,16,.75) 0%,rgba(10,26,16,0) 100%)}
+</style>
+</head>
+<body>
+<h1>Thumbnail brightness — four versions</h1>
+<p class="sub">Same image (Vayu Mudra), different overlay treatments</p>
+<div class="row">
+
+  <div class="col">
+    <div class="label">A — Current</div>
+    <div class="card a">
+      <img src="https://i.ytimg.com/vi/gwC-oBs01ZU/maxresdefault.jpg" alt="">
+      <div class="play"><i></i></div>
+      <div class="cap"><h3>Vayu Mudra</h3><p>0:14</p></div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="label">B — Lighter overlay</div>
+    <div class="card b">
+      <img src="https://i.ytimg.com/vi/gwC-oBs01ZU/maxresdefault.jpg" alt="">
+      <div class="play"><i></i></div>
+      <div class="cap"><h3>Vayu Mudra</h3><p>0:14</p></div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="label">C — Lighter + image boost</div>
+    <div class="card c">
+      <img src="https://i.ytimg.com/vi/gwC-oBs01ZU/maxresdefault.jpg" alt="">
+      <div class="play"><i></i></div>
+      <div class="cap"><h3>Vayu Mudra</h3><p>0:14</p></div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="label">D — No scrim, boost only</div>
+    <div class="card d">
+      <img src="https://i.ytimg.com/vi/gwC-oBs01ZU/maxresdefault.jpg" alt="">
+      <div class="play"><i></i></div>
+      <div class="cap"><h3>Vayu Mudra</h3><p>0:14</p></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
