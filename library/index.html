@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mudra Library — Complete A–Z Guide to Yoga Mudras | Yoga Mudras</title>
+<meta name="description" content="Browse the complete mudra library — every yoga mudra and hand mudra A to Z, with key benefits, practice duration and step-by-step guides.">
+<link rel="canonical" href="https://yogamudras.co/library/">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Mudra Library — Complete A–Z Guide to Yoga Mudras">
+<meta property="og:description" content="Every yoga mudra from A to Z — key benefits, practice duration and step-by-step guides.">
+<meta property="og:url" content="https://yogamudras.co/library/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Petit+Formal+Script&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Mudra Library","description":"A complete A-to-Z reference of yoga mudras and hand mudras.","url":"https://yogamudras.co/library/","isPartOf":{"@type":"WebSite","url":"https://yogamudras.co/"}}
+</script>
+<style>
+:root{
+  --paper:#F4F7F0;--cream:#FBFCF9;--forest:#1B3A2B;--forest-soft:#25503B;
+  --sage:#5E7C64;--sage-light:#8AA391;--moss:#E7EFE3;--moss-deep:#D6E3D0;
+  --gold:#B08D57;--gold-light:#D9BE8F;--ink:#223026;
+  --line:rgba(27,58,43,.12);--line-strong:rgba(27,58,43,.22);
+  --shadow:0 20px 44px -24px rgba(27,58,43,.38);
+  --radius:18px;--nav-h:78px;--side-w:64px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Nunito Sans",-apple-system,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(244,247,240,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);gap:20px}
+.logo{font-family:"Petit Formal Script",cursive;font-size:1.8rem;color:var(--forest);line-height:1.15;white-space:nowrap;display:inline-block;padding-top:2px}
+.logo small{font-family:"Nunito Sans",sans-serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--sage);display:block;margin-top:5px;font-weight:600}
+.nav-links{display:flex;gap:30px;font-size:.92rem;color:var(--forest);font-weight:600}
+.nav-links a{padding:6px 0;position:relative;transition:color .25s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:width .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--forest)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;padding:8px}
+.nav-toggle span{width:24px;height:2px;background:var(--forest);border-radius:2px}
+
+/* PAGE HEADER */
+.lib-header{background:var(--forest);color:var(--moss);padding:52px 32px 48px;text-align:center}
+.kicker{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-light);font-weight:700;display:block;margin-bottom:12px}
+.lib-header h1{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:clamp(2rem,4vw,3.2rem);color:var(--cream);line-height:1.1}
+.lib-header p{color:rgba(231,239,227,.78);font-size:1rem;margin-top:12px;max-width:520px;margin:12px auto 0}
+.lib-count{display:inline-block;margin-top:18px;background:rgba(231,239,227,.12);border:1px solid rgba(217,190,143,.28);border-radius:100px;padding:6px 18px;font-size:.82rem;color:var(--gold-light);font-weight:600}
+
+/* SEARCH */
+.search-wrap{background:var(--cream);border-bottom:1px solid var(--line);padding:16px 32px;position:sticky;top:var(--nav-h);z-index:100}
+.search-inner{max-width:1280px;margin:0 auto;position:relative}
+.search-inner svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;stroke:var(--sage);fill:none;stroke-width:2;pointer-events:none}
+#mudra-search{width:100%;padding:13px 18px 13px 46px;border:1.5px solid var(--line-strong);border-radius:100px;font-family:inherit;font-size:.95rem;color:var(--forest);background:var(--paper);outline:none;transition:border-color .25s;-webkit-appearance:none}
+#mudra-search:focus{border-color:var(--gold)}
+#mudra-search::placeholder{color:var(--sage-light)}
+
+/* LAYOUT */
+.lib-body{max-width:1280px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:var(--side-w) 1fr;align-items:start}
+
+/* SIDEBAR */
+.az-sidebar{position:sticky;top:calc(var(--nav-h) + 57px);height:calc(100vh - var(--nav-h) - 57px - 32px);overflow-y:auto;padding:24px 0;scrollbar-width:none}
+.az-sidebar::-webkit-scrollbar{display:none}
+.az-label{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);font-weight:700;padding:0 4px 10px;display:block;text-align:center}
+.az-grid{display:flex;flex-direction:column;align-items:center;gap:1px}
+.az-link{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;font-family:"Fraunces",Georgia,serif;font-size:1.05rem;font-weight:500;transition:background .2s,color .2s}
+.az-active{color:var(--forest);cursor:pointer}
+.az-active:hover,.az-active.is-active{background:var(--moss);color:var(--gold)}
+.az-active.is-active{font-weight:700;background:var(--moss)}
+.az-empty{color:rgba(27,58,43,.2);cursor:default;font-size:.95rem}
+
+/* CARDS PANEL */
+.cards-panel{padding:32px 0 64px 28px;min-height:80vh}
+
+/* LETTER GROUP */
+.letter-group{margin-bottom:52px}
+.letter-group:last-child{margin-bottom:0}
+.letter-heading{display:flex;align-items:center;gap:16px;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.letter-heading span{font-family:"Petit Formal Script",cursive;font-size:2.2rem;color:var(--gold);line-height:1}
+.letter-heading::after{content:"";flex:1;height:1px;background:var(--line)}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+
+/* MUDRA CARD */
+.mcard{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);display:grid;grid-template-columns:82px 1fr;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
+.mcard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(176,141,87,.4)}
+.mcard-img{background:linear-gradient(150deg,var(--moss) 0%,var(--moss-deep) 100%);display:flex;align-items:center;justify-content:center;padding:14px;color:var(--sage)}
+.mcard-img svg{width:48px;height:48px;opacity:.65}
+.mcard-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:7px}
+.mcard-head{display:flex;flex-direction:column;gap:1px}
+.mcard-name{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.05rem;color:var(--forest);line-height:1.2}
+.mcard-alias{font-size:.7rem;color:var(--sage);letter-spacing:.03em}
+.mcard-liner{font-size:.81rem;color:var(--sage);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mcard-highlights{list-style:none;display:flex;flex-direction:column;gap:3px}
+.mcard-highlights li{font-size:.79rem;color:var(--forest-soft);display:flex;align-items:flex-start;gap:6px;line-height:1.4}
+.mcard-highlights li::before{content:"·";color:var(--gold);font-weight:700;flex-shrink:0}
+.mcard-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mcard-dur{font-size:.73rem;color:var(--sage);background:var(--moss);padding:3px 10px;border-radius:100px;white-space:nowrap}
+.mcard-element{font-size:.7rem;color:var(--gold);font-weight:600;letter-spacing:.04em}
+.mcard-btn{display:block;text-align:center;background:var(--forest);color:var(--cream);border-radius:100px;padding:8px 14px;font-size:.78rem;font-weight:700;transition:background .25s;margin-top:3px}
+.mcard-btn:hover{background:var(--forest-soft)}
+
+/* NO RESULTS */
+.no-results{display:none;text-align:center;padding:80px 20px;color:var(--sage)}
+.no-results.visible{display:block}
+.no-results h3{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:1.5rem;color:var(--forest);margin-bottom:8px}
+
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(231,239,227,.7);padding:40px 32px 22px}
+.foot-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.foot-logo{font-family:"Petit Formal Script",cursive;font-size:1.6rem;color:var(--cream)}
+.foot-links{display:flex;gap:22px;font-size:.85rem}
+.foot-links a:hover{color:var(--gold-light)}
+.foot-copy{font-size:.76rem;text-align:center;padding-top:16px;margin-top:16px;border-top:1px solid rgba(231,239,227,.1)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-toggle{display:flex}
+  .lib-body{padding:0 20px}
+  .card-row{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  :root{--side-w:52px}
+  .lib-header{padding:36px 20px 30px}
+  .search-wrap{padding:12px 16px}
+  .lib-body{padding:0 12px}
+  .az-link{width:34px;height:34px;font-size:.95rem;border-radius:8px}
+  .cards-panel{padding:24px 0 48px 14px}
+  .mcard{grid-template-columns:68px 1fr}
+  .mcard-img svg{width:38px;height:38px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="logo">Yoga Mudras<small>the art of the hands</small></a>
+    <div class="nav-links">
+      <a href="/explore/">Explore</a>
+      <a href="/library/" class="active">Library</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/book/">Book</a>
+      <a href="/blog/">Blog</a>
+      <a href="/faqs/">FAQs</a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<header class="lib-header">
+  <span class="kicker">complete reference</span>
+  <h1>The Mudra Library</h1>
+  <p>Every yoga mudra and hand mudra — key benefits, practice duration and full step-by-step guides.</p>
+  <span class="lib-count">13 mudras documented · growing</span>
+</header>
+
+<div class="search-wrap">
+  <div class="search-inner">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+    <input type="search" id="mudra-search" placeholder="Search mudras — try 'stress', 'energy', 'heart'…" autocomplete="off" aria-label="Search mudras">
+  </div>
+</div>
+
+<div class="lib-body">
+
+  <aside class="az-sidebar" aria-label="Alphabet navigation">
+    <span class="az-label">A–Z</span>
+    <div class="az-grid">
+      <a href="#letter-A" class="az-link az-active">A</a>
+      <span class="az-link az-empty">B</span>
+      <span class="az-link az-empty">C</span>
+      <a href="#letter-D" class="az-link az-active">D</a>
+      <span class="az-link az-empty">E</span>
+      <span class="az-link az-empty">F</span>
+      <a href="#letter-G" class="az-link az-active">G</a>
+      <a href="#letter-H" class="az-link az-active">H</a>
+      <span class="az-link az-empty">I</span>
+      <span class="az-link az-empty">J</span>
+      <span class="az-link az-empty">K</span>
+      <span class="az-link az-empty">L</span>
+      <span class="az-link az-empty">M</span>
+      <span class="az-link az-empty">N</span>
+      <span class="az-link az-empty">O</span>
+      <a href="#letter-P" class="az-link az-active">P</a>
+      <span class="az-link az-empty">Q</span>
+      <span class="az-link az-empty">R</span>
+      <a href="#letter-S" class="az-link az-active">S</a>
+      <span class="az-link az-empty">T</span>
+      <span class="az-link az-empty">U</span>
+      <a href="#letter-V" class="az-link az-active">V</a>
+      <span class="az-link az-empty">W</span>
+      <span class="az-link az-empty">X</span>
+      <span class="az-link az-empty">Y</span>
+      <span class="az-link az-empty">Z</span>
+    </div>
+  </aside>
+
+  <main class="cards-panel" id="main">
+    <div class="no-results" id="no-results" aria-live="polite">
+      <h3>No mudras found</h3>
+      <p>Try a different keyword — a benefit, body part, or mudra name.</p>
+    </div>
+
+      <div class="letter-group" id="letter-A">
+        <h2 class="letter-heading"><span>A</span></h2>
+        <div class="card-row">
+        <article class="mcard" data-name="abhaya mudra" data-benefits="soothes the nervous system nurtures fearlessness elevates spiritual awareness">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Abhaya Mudra</h3>
+            </div>
+            <p class="mcard-liner">This mudra channels energy to foster emotional resilience and fearlessness.</p>
+            <ul class="mcard-highlights">
+              <li>Soothes the nervous system</li>
+              <li>Nurtures Fearlessness</li>
+              <li>Elevates Spiritual Awareness</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 5 minutes – 15 minutes</span>
+            <span class="mcard-element">Space</span>
+            </div>
+            <a href="/abhaya-mudra/" class="mcard-btn">Explore Abhaya Mudra →</a>
+          </div>
+        </article>
+        <article class="mcard" data-name="adi mudra" data-benefits="calms the nervous system increases lung capacity promotes relaxation">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Adi Mudra</h3>
+          <span class="mcard-alias">Primordial Mudra</span>
+            </div>
+            <p class="mcard-liner">Also referred to as the Primordial Mudra or the Baby's Gesture — the first hand gesture that huma…</p>
+            <ul class="mcard-highlights">
+              <li>Calms the nervous system</li>
+              <li>Increases lung capacity</li>
+              <li>Promotes relaxation</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 10 minutes – 45 minutes</span>
+            <span class="mcard-element">Air</span>
+            </div>
+            <a href="/adi-mudra/" class="mcard-btn">Explore Adi Mudra →</a>
+          </div>
+        </article>
+        <article class="mcard" data-name="anjali mudra" data-benefits="simplest to master grounding and humility unification of brain hemispheres">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Anjali Mudra</h3>
+          <span class="mcard-alias">Namaste Mudra</span>
+            </div>
+            <p class="mcard-liner">Practicing the Anjali Mudra bestows numerous subtle advantages that draw us nearer to the divine.</p>
+            <ul class="mcard-highlights">
+              <li>Simplest to master</li>
+              <li>Grounding and humility</li>
+              <li>Unification of brain hemispheres</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 5 minutes – 15 minutes</span>
+            <span class="mcard-element">All five elements</span>
+            </div>
+            <a href="/anjali-mudra/" class="mcard-btn">Explore Anjali Mudra →</a>
+          </div>
+        </article>
+        <article class="mcard" data-name="apan mudra" data-benefits="elimination detoxification maintains the health of small and large intestines">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Apan Mudra</h3>
+          <span class="mcard-alias">Apana Mudra</span>
+            </div>
+            <p class="mcard-liner">Apana Vayu governs elimination and the organs between the navel and perineum. Apan Mudra activate…</p>
+            <ul class="mcard-highlights">
+              <li>Elimination</li>
+              <li>Detoxification</li>
+              <li>Maintains the health of small and large intestines</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 10 minutes – 45 minutes</span>
+            <span class="mcard-element">Earth + Space</span>
+            </div>
+            <a href="/apan-mudra/" class="mcard-btn">Explore Apan Mudra →</a>
+          </div>
+        </article>
+        <article class="mcard" data-name="apan vayu mudra" data-benefits="detoxification blockage elimination pain relief">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Apan Vayu Mudra</h3>
+          <span class="mcard-alias">Mrit Sanjeevani Mudra</span>
+            </div>
+            <p class="mcard-liner">The ApanVayu Mudra, a significant therapeutic Mudra, fortifies the heart, moderates irregular hea…</p>
+            <ul class="mcard-highlights">
+              <li>Detoxification</li>
+              <li>Blockage Elimination</li>
+              <li>Pain Relief</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 10 minutes – 45 minutes</span>
+            <span class="mcard-element">Air + Space</span>
+            </div>
+            <a href="/apan-vayu-mudra/" class="mcard-btn">Explore Apan Vayu Mudra →</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div class="letter-group" id="letter-D">
+        <h2 class="letter-heading"><span>D</span></h2>
+        <div class="card-row">
+        <article class="mcard" data-name="dhyan mudra" data-benefits="relaxation balances left and right part of body">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Dhyan Mudra</h3>
+          <span class="mcard-alias">Samadhi Mudra</span>
+            </div>
+            <p class="mcard-liner">Also called Samadhi mudra, this is practiced across Hinduism and Buddhism by ascetics and spiritu…</p>
+            <ul class="mcard-highlights">
+              <li>Relaxation</li>
+              <li>Balances left and right part of body</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 10 minutes – 45 minutes</span>
+            <span class="mcard-element">All five elements</span>
+            </div>
+            <a href="/dhyan-mudra/" class="mcard-btn">Explore Dhyan Mudra →</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div class="letter-group" id="letter-G">
+        <h2 class="letter-heading"><span>G</span></h2>
+        <div class="card-row">
+        <article class="mcard" data-name="ganesh mudra" data-benefits="strengthens the anahata chakra enhances lung capacity builds upper-body strength">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Ganesh Mudra</h3>
+            </div>
+            <p class="mcard-liner">Lord Ganesha is regarded as Vighnaharta — the Remover or Destroyer of Obstacles. Ganesha Mudra is…</p>
+            <ul class="mcard-highlights">
+              <li>Strengthens the Anahata Chakra</li>
+              <li>Enhances lung capacity</li>
+              <li>Builds upper-body strength</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 5 minutes – 15 minutes</span>
+            <span class="mcard-element">Earth</span>
+            </div>
+            <a href="/ganesh-mudra/" class="mcard-btn">Explore Ganesh Mudra →</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div class="letter-group" id="letter-H">
+        <h2 class="letter-heading"><span>H</span></h2>
+        <div class="card-row">
+        <article class="mcard" data-name="hakini mudra" data-benefits="improves concentration enhances mental clarity connects the mind with breath">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Hakini Mudra</h3>
+          <span class="mcard-alias">Brain Power Mudra</span>
+            </div>
+            <p class="mcard-liner">The Hakini Mudra, also known as the 'Brain Power Mudra' or the 'Mudra for the Mind,' is a powerfu…</p>
+            <ul class="mcard-highlights">
+              <li>Improves concentration</li>
+              <li>Enhances mental clarity</li>
+              <li>Connects the mind with breath</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 2 minutes – 5 minutes</span>
+            <span class="mcard-element">All five elements</span>
+            </div>
+            <a href="/hakini-mudra/" class="mcard-btn">Explore Hakini Mudra →</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div class="letter-group" id="letter-P">
+        <h2 class="letter-heading"><span>P</span></h2>
+        <div class="card-row">
+        <article class="mcard" data-name="padma mudra" data-benefits="heart opener awakening helps rise above life's challenges">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Padma Mudra</h3>
+          <span class="mcard-alias">Lotus Mudra</span>
+            </div>
+            <p class="mcard-liner">The sacred lotus symbolizes the divine within us, honouring our inner beauty and light, and our a…</p>
+            <ul class="mcard-highlights">
+              <li>Heart Opener</li>
+              <li>Awakening</li>
+              <li>Helps rise above life's challenges</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 5 minutes – 10 minutes</span>
+            <span class="mcard-element">Water</span>
+            </div>
+            <a href="/padma-mudra/" class="mcard-btn">Explore Padma Mudra →</a>
+          </div>
+        </article>
+        <article class="mcard" data-name="prana mudra" data-benefits="detoxification blockage elimination pain relief">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Prana Mudra</h3>
+          <span class="mcard-alias">Pran Mudra</span>
+            </div>
+            <p class="mcard-liner">The Prana Mudra, a symbolic hand gesture, embodies life energy and vitality.</p>
+            <ul class="mcard-highlights">
+              <li>Detoxification</li>
+              <li>Blockage Elimination</li>
+              <li>Pain Relief</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 10 minutes – 45 minutes</span>
+            <span class="mcard-element">Fire + Earth + Water</span>
+            </div>
+            <a href="/prana-mudra/" class="mcard-btn">Explore Prana Mudra →</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div class="letter-group" id="letter-S">
+        <h2 class="letter-heading"><span>S</span></h2>
+        <div class="card-row">
+        <article class="mcard" data-name="surya mudra" data-benefits="energy booster sharpen focus helps in weight loss">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Surya Mudra</h3>
+          <span class="mcard-alias">Agni Mudra</span>
+            </div>
+            <p class="mcard-liner">Surya Mudra activates the fire element in the body, boosting metabolism, energy and focus while s…</p>
+            <ul class="mcard-highlights">
+              <li>Energy Booster</li>
+              <li>Sharpen Focus</li>
+              <li>Helps in weight loss</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 2 minutes – 10 minutes</span>
+            <span class="mcard-element">Fire</span>
+            </div>
+            <a href="/surya-mudra/" class="mcard-btn">Explore Surya Mudra →</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div class="letter-group" id="letter-V">
+        <h2 class="letter-heading"><span>V</span></h2>
+        <div class="card-row">
+        <article class="mcard" data-name="varun mudra" data-benefits="relief from dehydration prevents eye dryness and helps in blurred vision aids in blood detoxification and purification">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Varun Mudra</h3>
+          <span class="mcard-alias">Jala Mudra</span>
+            </div>
+            <p class="mcard-liner">Water, symbolizing freedom and fluidity, is emulated by the Varun Mudra, resulting in mental clar…</p>
+            <ul class="mcard-highlights">
+              <li>Relief from Dehydration</li>
+              <li>Prevents Eye Dryness and helps in Blurred Vision</li>
+              <li>Aids in Blood Detoxification and Purification</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 10 minutes – 45 minutes</span>
+            <span class="mcard-element">Water</span>
+            </div>
+            <a href="/varun-mudra/" class="mcard-btn">Explore Varun Mudra →</a>
+          </div>
+        </article>
+        <article class="mcard" data-name="vayu mudra" data-benefits="beneficial in aggravated vata dosha eliminates excessive and harmful wind from body relief in stress, anxiety, confusion, dryness, gas, bloating, constipation">
+          <div class="mcard-img" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M30 68V36a4.5 4.5 0 019 0M39 68V32a4.5 4.5 0 019 0M48 68V36a4.5 4.5 0 019 0v16a9 9 0 01-9 9H36a8 8 0 01-8-8V44a4.5 4.5 0 019 0"/>
+            </svg>
+          </div>
+          <div class="mcard-body">
+            <div class="mcard-head">
+              <h3 class="mcard-name">Vayu Mudra</h3>
+          <span class="mcard-alias">Air Mudra</span>
+            </div>
+            <p class="mcard-liner">The term 'Vayu' originates from Sanskrit and signifies wind or air. The Vayu Mudra aids in balanc…</p>
+            <ul class="mcard-highlights">
+              <li>Beneficial in Aggravated Vata Dosha</li>
+              <li>Eliminates Excessive and Harmful Wind from Body</li>
+              <li>Relief in Stress, Anxiety, Confusion, Dryness, Gas, Bloating, Constipation</li>
+            </ul>
+            <div class="mcard-meta">
+              <span class="mcard-dur">⏱ 10 minutes – 45 minutes</span>
+            <span class="mcard-element">Air</span>
+            </div>
+            <a href="/vayu-mudra/" class="mcard-btn">Explore Vayu Mudra →</a>
+          </div>
+        </article>
+        </div>
+      </div>
+  </main>
+
+</div>
+
+<footer class="footer">
+  <div class="foot-inner">
+    <span class="foot-logo">Yoga Mudras</span>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/explore/">Explore</a>
+      <a href="/library/">Library</a>
+      <a href="/book/">Books</a>
+      <a href="/blog/">Blog</a>
+      <a href="/faqs/">FAQs</a>
+    </div>
+  </div>
+  <div class="foot-inner foot-copy">© 2026 yogamudras.co — The quiet art of the hands</div>
+</footer>
+
+<script>
+(function () {
+  // ── A-Z active state on scroll ──
+  var groups  = Array.from(document.querySelectorAll('.letter-group'));
+  var azLinks = document.querySelectorAll('.az-active');
+  var OFFSET  = 160;
+
+  function updateActive () {
+    var scrollY = window.scrollY + OFFSET;
+    var active  = null;
+    groups.forEach(function (g) { if (g.offsetTop <= scrollY) active = g; });
+    azLinks.forEach(function (l) { l.classList.remove('is-active'); });
+    if (active) {
+      var letter = active.id.replace('letter-', '');
+      var link = document.querySelector('.az-active[href="#letter-' + letter + '"]');
+      if (link) link.classList.add('is-active');
+    }
+  }
+
+  window.addEventListener('scroll', updateActive, {passive: true});
+  updateActive();
+
+  azLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      var top = target.getBoundingClientRect().top + window.scrollY - OFFSET;
+      window.scrollTo({top: top, behavior: 'smooth'});
+    });
+  });
+
+  // ── Search / filter ──
+  var input  = document.getElementById('mudra-search');
+  var cards  = document.querySelectorAll('.mcard');
+  var grps   = document.querySelectorAll('.letter-group');
+  var noRes  = document.getElementById('no-results');
+
+  input.addEventListener('input', function () {
+    var q = this.value.toLowerCase().trim();
+    var count = 0;
+
+    cards.forEach(function (card) {
+      var match = !q || card.textContent.toLowerCase().includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) count++;
+    });
+
+    grps.forEach(function (g) {
+      var any = Array.from(g.querySelectorAll('.mcard')).some(function(c){
+        return c.style.display !== 'none';
+      });
+      g.style.display = any ? '' : 'none';
+    });
+
+    noRes.classList.toggle('visible', count === 0);
+  });
+})();
+</script>
+</body>
+</html>
