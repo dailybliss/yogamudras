@@ -940,7 +940,7 @@ details summary::-webkit-details-marker{display:none}
               <span class="review-source">Verified purchase · Amazon US · October 2024</span>
             </div>
           </div>
-          <a href="/book/" class="book-btn">Get the mudras book →</a>
+          <a href="https://www.amazon.com/dp/B0D5WK9R3K" class="book-btn amazon-link" data-asin-beginners="1" target="_blank" rel="noopener noreferrer">Get the mudras book →</a>
         </div>
       </article>
       <article class="book">
@@ -954,7 +954,7 @@ details summary::-webkit-details-marker{display:none}
           <h3>Mudra Mastery: Beyond the Basics</h3>
           <div class="stars" aria-label="Rated 5 out of 5">★★★★★</div>
           <p>For those ready to go further — slightly advanced mudras for specific health goals and deeper states of wellbeing.</p>
-          <a href="/book/" class="book-btn">Get the mudras book →</a>
+          <a href="https://www.amazon.com/dp/B0DT9P2FZM" class="book-btn amazon-link" data-asin-mastery="1" target="_blank" rel="noopener noreferrer">Get the mudras book →</a>
         </div>
       </article>
     </div>
@@ -1121,5 +1121,80 @@ details summary::-webkit-details-marker{display:none}
   }
 })();
 </script>
+
+<script>
+(function () {
+
+  // ── Country-specific KDP links ────────────────────────────────
+  var links = {
+    beginners: {
+      US: 'https://www.amazon.com/dp/B0D5WK9R3K',
+      GB: 'https://www.amazon.co.uk/dp/B0D5WK9R3K',
+      IE: 'https://www.amazon.co.uk/dp/B0D5WK9R3K',
+      DE: 'https://www.amazon.de/dp/B0D5WK9R3K',
+      AT: 'https://www.amazon.de/dp/B0D5WK9R3K',
+      CH: 'https://www.amazon.de/dp/B0D5WK9R3K',
+      FR: 'https://www.amazon.fr/dp/B0D5WK9R3K',
+      BE: 'https://www.amazon.fr/dp/B0D5WK9R3K',
+      ES: 'https://www.amazon.es/dp/B0D5WK9R3K',
+      IT: 'https://www.amazon.it/dp/B0D5WK9R3K',
+      NL: 'https://www.amazon.nl/dp/B0D5WK9R3K',
+      JP: 'https://www.amazon.co.jp/dp/B0D5WK9R3K',
+      BR: 'https://www.amazon.com.br/dp/B0D5WK9R3K',
+      CA: 'https://www.amazon.ca/dp/B0D5WK9R3K',
+      MX: 'https://www.amazon.com.mx/dp/B0D5WK9R3K',
+      AU: 'https://www.amazon.com.au/dp/B0D5WK9R3K',
+      NZ: 'https://www.amazon.com.au/dp/B0D5WK9R3K',
+      IN: 'https://www.amazon.in/dp/B0D5WK9R3K',
+      _:  'https://www.amazon.com/dp/B0D5WK9R3K'
+    },
+    mastery: {
+      US: 'https://www.amazon.com/dp/B0DT9P2FZM',
+      GB: 'https://www.amazon.co.uk/dp/B0DT9P2FZM',
+      IE: 'https://www.amazon.co.uk/dp/B0DT9P2FZM',
+      DE: 'https://www.amazon.de/dp/B0DT9P2FZM',
+      AT: 'https://www.amazon.de/dp/B0DT9P2FZM',
+      CH: 'https://www.amazon.de/dp/B0DT9P2FZM',
+      FR: 'https://www.amazon.fr/dp/B0DT9P2FZM',
+      BE: 'https://www.amazon.fr/dp/B0DT9P2FZM',
+      ES: 'https://www.amazon.es/dp/B0DT9P2FZM',
+      IT: 'https://www.amazon.it/dp/B0DT9P2FZM',
+      NL: 'https://www.amazon.nl/dp/B0DT9P2FZM',
+      JP: 'https://www.amazon.co.jp/dp/B0DT9P2FZM',
+      BR: 'https://www.amazon.com.br/dp/B0DT9P2FZM',
+      CA: 'https://www.amazon.ca/dp/B0DT9P2FZM',
+      MX: 'https://www.amazon.com.mx/dp/B0DT9P2FZM',
+      AU: 'https://www.amazon.com.au/dp/B0DT9P2FZM',
+      NZ: 'https://www.amazon.com.au/dp/B0DT9P2FZM',
+      IN: 'https://www.amazon.in/dp/B0DT9P2FZM',
+      _:  'https://www.amazon.com/dp/B0DT9P2FZM'
+    }
+  };
+
+  function applyLinks(country) {
+    document.querySelectorAll('.amazon-link').forEach(function (el) {
+      var book = el.dataset.asinBeginners ? 'beginners' : 'mastery';
+      var map  = links[book];
+      el.href  = map[country] || map['_'];
+    });
+  }
+
+  // 1 — Browser locale (instant, no network call)
+  var lang = navigator.language || navigator.userLanguage || '';
+  var parts = lang.split('-');
+  var localeCountry = parts.length > 1 ? parts[parts.length - 1].toUpperCase() : '';
+  if (localeCountry && (links.beginners[localeCountry] || links.mastery[localeCountry])) {
+    applyLinks(localeCountry);
+    return;
+  }
+
+  // 2 — IP geolocation fallback
+  fetch('https://ipapi.co/json/')
+    .then(function (r) { return r.json(); })
+    .then(function (d) { applyLinks(d.country_code || 'US'); })
+    .catch(function () { applyLinks('US'); });
+
+})();
+</script>
 </body>
-  </html>
+</html>
