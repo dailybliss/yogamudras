@@ -1179,23 +1179,20 @@ details summary::-webkit-details-marker{display:none}
     });
   }
 
-  // 1 — Browser locale (instant, no network call)
-  var lang = navigator.language || navigator.userLanguage || '';
-  var parts = lang.split('-');
-  var localeCountry = parts.length > 1 ? parts[parts.length - 1].toUpperCase() : '';
-  if (localeCountry && (links.beginners[localeCountry] || links.mastery[localeCountry])) {
-    applyLinks(localeCountry);
-    return;
-  }
+  // ── Detection runs most-reliable-first ────────────────────────
+  // NOTE: navigator.language is deliberately NOT used for country —
+  // en-US is set by users worldwide and is not a location signal.
 
-  // 2 — Timezone-based country guess (instant, no network, covers India and most markets)
+  // 1 — Timezone name (reliable — reflects the machine's actual location)
   var tzCountry = {
     'Asia/Calcutta':         'IN', 'Asia/Kolkata':          'IN',
     'Asia/Tokyo':            'JP', 'Asia/Singapore':        'SG',
     'Asia/Dubai':            'AE', 'Asia/Riyadh':           'SA',
     'America/New_York':      'US', 'America/Chicago':       'US',
     'America/Los_Angeles':   'US', 'America/Denver':        'US',
+    'America/Phoenix':       'US', 'America/Detroit':       'US',
     'America/Toronto':       'CA', 'America/Vancouver':     'CA',
+    'America/Edmonton':      'CA', 'America/Winnipeg':      'CA',
     'America/Sao_Paulo':     'BR', 'America/Mexico_City':   'MX',
     'Europe/London':         'GB', 'Europe/Dublin':         'IE',
     'Europe/Berlin':         'DE', 'Europe/Vienna':         'AT',
@@ -1204,45 +1201,28 @@ details summary::-webkit-details-marker{display:none}
     'Europe/Rome':           'IT', 'Europe/Amsterdam':      'NL',
     'Europe/Stockholm':      'SE', 'Europe/Warsaw':         'PL',
     'Australia/Sydney':      'AU', 'Australia/Melbourne':   'AU',
-    'Australia/Brisbane':    'AU', 'Pacific/Auckland':      'NZ',
+    'Australia/Brisbane':    'AU', 'Australia/Perth':       'AU',
+    'Pacific/Auckland':      'NZ',
   };
 
-  // UTC offset → country fallback (covers browsers that report offsets instead of tz names)
+  // 2 — UTC offset fallback (for browsers reporting offsets, not tz names)
   var offsetCountry = {
-    '330':   'IN',   // UTC+5:30 — India (unique offset, safe to use)
-    '-300':  'US',   // UTC-5 EST
-    '-360':  'US',   // UTC-6 CST
-    '-420':  'US',   // UTC-7 MST
-    '-480':  'US',   // UTC-8 PST
-    '-240':  'CA',   // UTC-4 Canada Eastern
-    '-300':  'CA',   // ambiguous — skip, let API handle
-    '0':     'GB',   // UTC — UK (winter)
-    '60':    'FR',   // UTC+1 — covers DE/FR/ES/IT/NL (ambiguous, let API refine)
-    '540':   'JP',   // UTC+9 — Japan
-    '-180':  'BR',   // UTC-3 — Brazil
-    '-360':  'MX',   // UTC-6 — Mexico
-    '600':   'AU',   // UTC+10 — Australia Eastern
-    '480':   'SG',   // UTC+8 — Singapore
-    '345':   'NP',   // Nepal — close to India offset
+    '330':  'IN',   // UTC+5:30 — unique to India
+    '540':  'JP',   // UTC+9  — Japan
+    '-180': 'BR',   // UTC-3  — Brazil
   };
 
   try {
     var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    if (tz && tzCountry[tz]) {
-      applyLinks(tzCountry[tz]);
-      return;
-    }
-    // Offset fallback — getTimezoneOffset() returns minutes WEST (negative for east)
+    if (tz && tzCountry[tz]) { applyLinks(tzCountry[tz]); return; }
+
     var offset = String(-(new Date().getTimezoneOffset()));
-    if (offsetCountry[offset]) {
-      applyLinks(offsetCountry[offset]);
-      return;
-    }
+    if (offsetCountry[offset]) { applyLinks(offsetCountry[offset]); return; }
   } catch(e) {}
 
   // 3 — IP geolocation API chain (three fallbacks)
   var apis = [
-    { url: 'https://ipapi.co/json/',                     key: 'country_code' },
+    { url: 'https://ipapi.co/json/',                      key: 'country_code' },
     { url: 'https://ip-api.com/json/?fields=countryCode', key: 'countryCode'  },
     { url: 'https://ipwho.is/',                           key: 'country_code' },
   ];
