@@ -113,6 +113,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 /* FOOTER */
 .footer{background:var(--ink);color:rgba(231,239,227,.7);padding:58px 0 28px}
+.foot-wrap{max-width:1180px;margin:0 auto;padding:0 40px}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
 .foot-grid .logo{color:var(--cream)}
 .foot-about{font-size:.87rem;margin-top:14px;max-width:290px}
@@ -122,6 +123,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .foot-grid li a{transition:color .25s}
 .foot-grid li a:hover{color:var(--gold-light)}
 .foot-bottom{border-top:1px solid rgba(231,239,227,.14);margin-top:42px;padding-top:22px;display:flex;justify-content:space-between;font-size:.79rem;flex-wrap:wrap;gap:10px}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:640px){.foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column;text-align:center}}
 @media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
 @media(max-width:640px){.foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column;text-align:center}}
 
@@ -138,7 +141,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 @media(max-width:560px){
   .video-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}
 }
-.mobile-menu{position:fixed;top:78px;left:0;right:0;bottom:0;background:var(--paper);z-index:99;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;overflow-y:auto}
+.mobile-menu{position:fixed;top:78px;left:0;right:0;bottom:0;background:var(--paper);z-index:500;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;overflow-y:auto}
 .mobile-menu.is-open{opacity:1;transform:translateY(0);pointer-events:auto}
 .mobile-menu-inner{padding:28px 32px 40px;display:flex;flex-direction:column;gap:2px;max-width:1180px;margin:0 auto}
 .mobile-menu a{font-family:"Fraunces",Georgia,serif;font-size:1.3rem;color:var(--forest);padding:16px 4px;border-bottom:1px solid var(--line);font-weight:500;display:block}
@@ -411,7 +414,7 @@ body.menu-open{overflow:hidden}
 </section>
 
 <footer class="footer">
-  <div class="wrap">
+  <div class="foot-wrap">
     <div class="foot-grid">
       <div>
         <span class="logo">Yoga Mudras</span>
