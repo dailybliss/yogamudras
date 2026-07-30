@@ -112,12 +112,19 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .no-results h3{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:1.5rem;color:var(--forest);margin-bottom:8px}
 
 /* FOOTER */
-.footer{background:var(--ink);color:rgba(231,239,227,.7);padding:40px 32px 22px}
-.foot-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.foot-logo{font-family:"Petit Formal Script",cursive;font-size:1.6rem;color:var(--cream)}
-.foot-links{display:flex;gap:22px;font-size:.85rem}
-.foot-links a:hover{color:var(--gold-light)}
-.foot-copy{font-size:.76rem;text-align:center;padding-top:16px;margin-top:16px;border-top:1px solid rgba(231,239,227,.1)}
+.footer{background:var(--ink);color:rgba(231,239,227,.7);padding:58px 0 28px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.foot-grid .logo{color:var(--cream)}
+.foot-about{font-size:.87rem;margin-top:14px;max-width:290px}
+.foot-grid h3{color:var(--cream);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:15px;font-weight:700}
+.foot-grid ul{list-style:none}
+.foot-grid li{margin-bottom:9px;font-size:.89rem}
+.foot-grid li a{transition:color .25s}
+.foot-grid li a:hover{color:var(--gold-light)}
+.foot-bottom{border-top:1px solid rgba(231,239,227,.14);margin-top:42px;padding-top:22px;display:flex;justify-content:space-between;font-size:.79rem;flex-wrap:wrap;gap:10px}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:640px){.foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column;text-align:center}}
+
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -142,6 +149,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   .mcard{grid-template-columns:68px 1fr}
   .mcard-img svg{width:38px;height:38px}
 }
+.mobile-menu{position:fixed;top:78px;left:0;right:0;bottom:0;background:var(--paper);z-index:99;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;overflow-y:auto}
+.mobile-menu.is-open{opacity:1;transform:translateY(0);pointer-events:auto}
+.mobile-menu-inner{padding:28px 32px 40px;display:flex;flex-direction:column;gap:2px;max-width:1180px;margin:0 auto}
+.mobile-menu a{font-family:"Fraunces",Georgia,serif;font-size:1.3rem;color:var(--forest);padding:16px 4px;border-bottom:1px solid var(--line);font-weight:500;display:block}
+.mobile-menu a.active{color:var(--gold)}
+.nav-toggle{position:relative;z-index:101}
+.nav-toggle.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.is-active span:nth-child(2){opacity:0}
+.nav-toggle.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-toggle span{transition:transform .25s ease,opacity .2s ease}
+body.menu-open{overflow:hidden}
 </style>
 </head>
 <body>
@@ -160,6 +178,16 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="/explore/">Explore</a>
+      <a href="/library/" class="active">Library</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/book/">Book</a>
+      <a href="/blog/">Blog</a>
+      <a href="/faqs/">FAQs</a>
+    </div>
   </div>
 </nav>
 
@@ -566,18 +594,49 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </div>
 
 <footer class="footer">
-  <div class="foot-inner">
-    <span class="foot-logo">Yoga Mudras</span>
-    <div class="foot-links">
-      <a href="/">Home</a>
-      <a href="/explore/">Explore</a>
-      <a href="/library/">Library</a>
-      <a href="/book/">Books</a>
-      <a href="/blog/">Blog</a>
-      <a href="/faqs/">FAQs</a>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="logo">Yoga Mudras</span>
+        <p class="foot-about">The quiet art of the hands — a modern home for an ancient practice.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="/library/">Complete mudra library</a></li>
+          <li><a href="/explore/">Mudras by goal &amp; condition</a></li>
+          <li><a href="/science/">The science of mudras</a></li>
+          <li><a href="/history/">History &amp; origins</a></li>
+          <li><a href="/guidelines/">Practice guidelines</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Popular mudras</h3>
+        <ul>
+          <li><a href="/gyan-mudra/">Gyan Mudra</a></li>
+          <li><a href="/prana-mudra/">Prana Mudra</a></li>
+          <li><a href="/vayu-mudra/">Vayu Mudra</a></li>
+          <li><a href="/anjali-mudra/">Anjali Mudra</a></li>
+          <li><a href="/dhyan-mudra/">Dhyan Mudra</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>More</h3>
+        <ul>
+          <li><a href="/book/">Yoga mudras books</a></li>
+          <li><a href="/blog/">Mudra journal</a></li>
+          <li><a href="/gallery/">Video gallery</a></li>
+          <li><a href="/faqs/">FAQs</a></li>
+          <li><a href="https://www.instagram.com/mudraforbeginners" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@mudraforbeginners" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 yogamudras.co</span>
+      <span>Made for calmer, more focused living</span>
     </div>
   </div>
-  <div class="foot-inner foot-copy">© 2026 yogamudras.co — The quiet art of the hands</div>
 </footer>
 
 <script>
@@ -636,6 +695,38 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     });
 
     noRes.classList.toggle('visible', count === 0);
+  });
+})();
+</script>
+<script>
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var menu   = document.querySelector('.mobile-menu');
+  if (!toggle || !menu) return;
+
+  function closeMenu () {
+    menu.classList.remove('is-open');
+    toggle.classList.remove('is-active');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  }
+  function openMenu () {
+    menu.classList.add('is-open');
+    toggle.classList.add('is-active');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('menu-open');
+  }
+  toggle.addEventListener('click', function () {
+    if (menu.classList.contains('is-open')) closeMenu(); else openMenu();
+  });
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) closeMenu();
   });
 })();
 </script>
