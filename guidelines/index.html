@@ -112,7 +112,8 @@ body.menu-open{overflow:hidden}
 .foot-grid li a{transition:color .25s}
 .foot-grid li a:hover{color:var(--gold-light)}
 .foot-bottom{border-top:1px solid rgba(231,239,227,.14);margin-top:42px;padding-top:22px;display:flex;justify-content:space-between;font-size:.79rem;flex-wrap:wrap;gap:10px}
-@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:640px){.foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column;text-align:center}}
 
 @media(max-width:900px){
   .nav-links{display:none}
@@ -126,6 +127,8 @@ body.menu-open{overflow:hidden}
 </style>
 </head>
 <body>
+
+
 
 <nav class="nav" aria-label="Main navigation">
   <div class="nav-inner">
